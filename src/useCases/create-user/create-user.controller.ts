@@ -9,8 +9,8 @@ export class CreateUserController {
       const result = await useCase.execute(data);
 
       return response.json(result);
-    } catch (error) {
-      return response.status(400).json(error);
+    } catch (error: any) {
+      return response.status(400).json(error.message);
     }
   }
 }
